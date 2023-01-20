@@ -47,17 +47,17 @@ function generateUniqueId() {
 function chatStripe(isAi, value, uniqueId) {
   return (
     `
-        <div class="wrapper ${isAi && 'ai'}">
-            <div class="chat">
-                <div class="profile">
-                    <img 
-                      src=${isAi ? bot : user} 
-                      alt="${isAi ? 'bot' : 'user'}" 
-                    />
-                </div>
-                <div class="message" id=${uniqueId}>${value}</div>
-            </div>
-        </div>
+      <div class="wrapper ${isAi && 'ai'}">
+          <div class="chat">
+              <div class="profile">
+                  <img 
+                    src=${isAi ? bot : user} 
+                    alt="${isAi ? 'bot' : 'user'}" 
+                  />
+              </div>
+              <div class="message" id=${uniqueId}>${value}</div>
+          </div>
+      </div>
     `
   )
 }
@@ -86,7 +86,7 @@ const handleSubmit = async (e) => {
   // messageDiv.innerHTML = "..."
   loader(messageDiv)
 
-  const response = await fetch('"http://localhost:5000"', {
+  const response = await fetch("https://p-ai.onrender.com", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
